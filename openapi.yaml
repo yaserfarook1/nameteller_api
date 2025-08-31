@@ -3,7 +3,7 @@ info:
   title: NameTeller API
   version: "1.0.0"
 servers:
-  - url: https://<your-streamlit-app-url>
+  - url: https://nametellerapi.streamlit.app
 paths:
   /:
     get:
