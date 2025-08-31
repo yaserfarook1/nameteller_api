@@ -2,22 +2,14 @@ openapi: 3.0.0
 info:
   title: NameTeller API
   version: "1.0.0"
-  description: |
-    A single endpoint that returns a static greeting.
+  description: "A single endpoint that returns a static greeting."
 servers:
-  - url: https://nametellerapi.streamlit.app
+  - url: https://nameteller-api-1.onrender.com
 paths:
-  /:
+  /hello:
     get:
       operationId: SayHelloFarook
       summary: Returns a static greeting for Farook
-      parameters:
-        - name: path
-          in: query
-          required: true
-          schema:
-            type: string
-            enum: [hello]
       responses:
         "200":
           description: OK
