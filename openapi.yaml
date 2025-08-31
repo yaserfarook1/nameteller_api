@@ -2,6 +2,8 @@ openapi: 3.0.0
 info:
   title: NameTeller API
   version: "1.0.0"
+  description: |
+    A single endpoint that returns a static greeting.
 servers:
   - url: https://nametellerapi.streamlit.app
 paths:
