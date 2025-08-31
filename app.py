@@ -5,4 +5,4 @@ app = FastAPI()
 
 @app.get("/hello")
 def hello():
-    return JSONResponse(content={"message": "Hello Farook, what do you want?"})
+    return JSONResponse(content={"message": "Hello Farook, You can see your dashboard reports on http://localhost:3000/"})
