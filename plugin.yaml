@@ -8,4 +8,4 @@ Descriptor:
 SkillGroups:
   - Format: API
     Settings:
-      OpenApiSpecUrl: https://<raw-url-to-your-openapi.yaml>
+      OpenApiSpecUrl: https://raw.githubusercontent.com/yaserfarook1/nameteller_api/refs/heads/main/openapi.yaml
