@@ -1,24 +1,19 @@
 import streamlit as st
-import json
+from fastapi import FastAPI
+from fastapi.responses import JSONResponse
+from streamlit.web.server import server
 
-st.set_page_config(page_title="NameTeller API", page_icon="👋")
+# Create FastAPI app
+app = FastAPI()
 
-# Hide Streamlit UI (so it feels like a pure API)
-st.markdown(
-    """
-    <style>
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+@app.get("/hello")
+def hello():
+    return JSONResponse(content={"message": "Hello Farook, what do you want?"})
 
-# Our "endpoint"
-path = st.experimental_get_query_params().get("path", [""])[0]
+# Mount FastAPI app to Streamlit
+server.get_current()._http_app.mount("/api", app)
 
-if path == "hello":
-    st.json({"message": "Hello Farook, what do you want?"})
-else:
-    st.json({"status": "ok"})
+# Streamlit UI (optional)
+st.title("NameTeller API")
+st.write("API is running at `/api/hello`")
+st.write("You can test it by opening: [https://<your-app>.streamlit.app/api/hello](https://<your-app>.streamlit.app/api/hello)")
