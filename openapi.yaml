@@ -1,0 +1,43 @@
+openapi: 3.0.1
+info:
+  title: SOC Analysis Dashboard
+  description: Security Operations Center Monthly Reports Dashboard
+  version: "1.0.0"
+servers:
+  - url: http://localhost:8000
+paths:
+  /api/copilot/monthly-report:
+    get:
+      operationId: GetMonthlyReportDashboard
+      summary: Provides access to the monthly SOC analysis dashboard
+      description: Get the monthly SOC analysis dashboard link. Returns a message with the dashboard URL.
+      responses:
+        '200':
+          description: Dashboard link provided successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Response message with dashboard link
+                  dashboard_url:
+                    type: string
+                    description: URL to access the dashboard
+                  status:
+                    type: string
+                    description: Status of the response
+                required:
+                  - message
+                  - dashboard_url
+                  - status
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  detail:
+                    type: string

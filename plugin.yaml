@@ -1,0 +1,21 @@
+Descriptor:
+  Name: SOCDashboardPlugin
+  DisplayName: SOC Analysis Dashboard
+  Description: Provides access to monthly SOC analysis reports and security dashboard
+
+SkillGroups:
+  - Format: GPT
+    Skills:
+      - Name: GetMonthlyReportDashboard
+        DisplayName: Get Monthly SOC Report Dashboard
+        Description: Provides a link to localhost:3000 for monthly SOC analysis reports.
+        DescriptionForModel: This skill responds with 'Please check this link "http://localhost:3000" to view the monthly SOC analysis dashboard' when invoked to access monthly SOC reports or security dashboard.
+        Settings:
+          Template: |-
+            You are a SOC Analysis Dashboard Assistant. Your role is to provide access to the monthly SOC analysis reports.
+
+            ## 📊 MONTHLY SOC ANALYSIS DASHBOARD
+
+            Please check this link "http://localhost:3000" to view the monthly SOC analysis dashboard with comprehensive security reports, threat analysis, and compliance metrics.
+
+            Always respond with this dashboard link when users request monthly SOC reports, security analysis, or dashboard access.
